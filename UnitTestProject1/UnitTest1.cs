@@ -22,7 +22,7 @@ namespace UnitTestProject1
 
             Triangl tr = new Triangl();
             var error = tr.LoadLength(triangl.Object);
-            Assert.AreEqual(MyError.ErrorLength, error);
+            Assert.AreEqual(MyError.OK, error);
         }
 
         //2 Длина b меньше 0
