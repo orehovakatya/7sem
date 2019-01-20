@@ -1,2 +1,9 @@
-language: csharp
-solution: Tests/WebApplication1.sln
+language: csharp  
+sudo: required  
+dist: trusty  
+mono: none
+dotnet: 2.0.0-preview2-006497
+before_script:
+  - dotnet restore
+script:  
+  - dotnet test ./UnitTestProject1 -c Release -f netcoreapp2.0
