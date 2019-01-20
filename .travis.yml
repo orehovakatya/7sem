@@ -1,0 +1,2 @@
+language: csharp
+solution: Tests/WebApplication1.sln
