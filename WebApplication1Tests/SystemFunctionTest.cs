@@ -9,23 +9,25 @@ using Moq;
 
 namespace UnitTestProject1
 {
+
     [TestClass]
     public class SystemFunctionTest
     {
+        public IWebDriver driver = new ChromeDriver(@"C:\Users\Катя\Documents\7sem\WebApplication1Tests\bin\Debug");
         /// <summary>
         /// Точи лежат на одной прямой
         /// </summary>
         [TestMethod]
         public void PointInOneLen()
         {
-            var driver = new ChromeDriver { Url = "http://localhost:62912/WebForm1.aspx" };
+            driver.Url = "http://localhost:62912/WebForm1.aspx";
 
-            driver.FindElementById("TextBox1").SendKeys("0");
-            driver.FindElementById("TextBox2").SendKeys("1");
-            driver.FindElementById("TextBox3").SendKeys("2");
-            driver.FindElementById("TextBox4").SendKeys("0");
-            driver.FindElementById("TextBox5").SendKeys("0");
-            driver.FindElementById("TextBox6").SendKeys("0");
+            driver.FindElement(By.Id("TextBox1")).SendKeys("0");
+            driver.FindElement(By.Id("TextBox2")).SendKeys("1");
+            driver.FindElement(By.Id("TextBox3")).SendKeys("2");
+            driver.FindElement(By.Id("TextBox4")).SendKeys("0");
+            driver.FindElement(By.Id("TextBox5")).SendKeys("0");
+            driver.FindElement(By.Id("TextBox6")).SendKeys("0");
 
             driver.FindElement(By.Id("Button1")).Click();
 
@@ -40,18 +42,18 @@ namespace UnitTestProject1
         [TestMethod]
         public void TrianglSIs6()
         {
-            var driver = new ChromeDriver { Url = "http://localhost:62912/WebForm1.aspx" };
+            driver.Url = "http://localhost:62912/WebForm1.aspx";
 
-            driver.FindElementById("TextBox1").SendKeys("0");
-            driver.FindElementById("TextBox2").SendKeys("3");
-            driver.FindElementById("TextBox3").SendKeys("3");
-            driver.FindElementById("TextBox4").SendKeys("0");
-            driver.FindElementById("TextBox5").SendKeys("0");
-            driver.FindElementById("TextBox6").SendKeys("4");
+            driver.FindElement(By.Id("TextBox1")).SendKeys("0");
+            driver.FindElement(By.Id("TextBox2")).SendKeys("3");
+            driver.FindElement(By.Id("TextBox3")).SendKeys("3");
+            driver.FindElement(By.Id("TextBox4")).SendKeys("0");
+            driver.FindElement(By.Id("TextBox5")).SendKeys("0");
+            driver.FindElement(By.Id("TextBox6")).SendKeys("4");
 
             driver.FindElement(By.Id("Button1")).Click();
 
-            Assert.IsTrue(driver.FindElementById("Label1").Text == "6");
+            Assert.IsTrue(driver.FindElement(By.Id("Label1")).Text == "6");
             driver.Dispose();
         }
 
@@ -61,18 +63,18 @@ namespace UnitTestProject1
         [TestMethod]
         public void TrianglPIs12()
         {
-            var driver = new ChromeDriver { Url = "http://localhost:62912/WebForm1.aspx" };
+            driver.Url = "http://localhost:62912/WebForm1.aspx";
 
-            driver.FindElementById("TextBox1").SendKeys("0");
-            driver.FindElementById("TextBox2").SendKeys("3");
-            driver.FindElementById("TextBox3").SendKeys("3");
-            driver.FindElementById("TextBox4").SendKeys("0");
-            driver.FindElementById("TextBox5").SendKeys("0");
-            driver.FindElementById("TextBox6").SendKeys("4");
+            driver.FindElement(By.Id("TextBox1")).SendKeys("0");
+            driver.FindElement(By.Id("TextBox2")).SendKeys("3");
+            driver.FindElement(By.Id("TextBox3")).SendKeys("3");
+            driver.FindElement(By.Id("TextBox4")).SendKeys("0");
+            driver.FindElement(By.Id("TextBox5")).SendKeys("0");
+            driver.FindElement(By.Id("TextBox6")).SendKeys("4");
 
             driver.FindElement(By.Id("Button1")).Click();
 
-            Assert.IsTrue(driver.FindElementById("Label2").Text == "12");
+            Assert.IsTrue(driver.FindElement(By.Id("Label2")).Text == "12");
             driver.Dispose();
         }
 
@@ -82,14 +84,14 @@ namespace UnitTestProject1
         [TestMethod]
         public void FirstPointError()
         {
-            var driver = new ChromeDriver { Url = "http://localhost:62912/WebForm1.aspx" };
+            driver.Url = "http://localhost:62912/WebForm1.aspx";
 
-            driver.FindElementById("TextBox1").SendKeys("0");
-            driver.FindElementById("TextBox2").SendKeys("1");
-            driver.FindElementById("TextBox3").SendKeys("2");
-            driver.FindElementById("TextBox4").SendKeys("h");
-            driver.FindElementById("TextBox5").SendKeys("0");
-            driver.FindElementById("TextBox6").SendKeys("0");
+            driver.FindElement(By.Id("TextBox1")).SendKeys("0");
+            driver.FindElement(By.Id("TextBox2")).SendKeys("1");
+            driver.FindElement(By.Id("TextBox3")).SendKeys("2");
+            driver.FindElement(By.Id("TextBox4")).SendKeys("h");
+            driver.FindElement(By.Id("TextBox5")).SendKeys("0");
+            driver.FindElement(By.Id("TextBox6")).SendKeys("0");
 
             driver.FindElement(By.Id("Button1")).Click();
 
@@ -104,14 +106,14 @@ namespace UnitTestProject1
         [TestMethod]
         public void SecondPointError()
         {
-            var driver = new ChromeDriver { Url = "http://localhost:62912/WebForm1.aspx" };
+            driver.Url = "http://localhost:62912/WebForm1.aspx";
 
-            driver.FindElementById("TextBox1").SendKeys("0");
-            driver.FindElementById("TextBox2").SendKeys("l");
-            driver.FindElementById("TextBox3").SendKeys("2");
-            driver.FindElementById("TextBox4").SendKeys("2");
-            driver.FindElementById("TextBox5").SendKeys("k");
-            driver.FindElementById("TextBox6").SendKeys("0");
+            driver.FindElement(By.Id("TextBox1")).SendKeys("0");
+            driver.FindElement(By.Id("TextBox2")).SendKeys("l");
+            driver.FindElement(By.Id("TextBox3")).SendKeys("2");
+            driver.FindElement(By.Id("TextBox4")).SendKeys("2");
+            driver.FindElement(By.Id("TextBox5")).SendKeys("k");
+            driver.FindElement(By.Id("TextBox6")).SendKeys("0");
 
             driver.FindElement(By.Id("Button1")).Click();
 
@@ -126,14 +128,14 @@ namespace UnitTestProject1
         [TestMethod]
         public void ThirdPointError()
         {
-            var driver = new ChromeDriver { Url = "http://localhost:62912/WebForm1.aspx" };
+            driver.Url = "http://localhost:62912/WebForm1.aspx";
 
-            driver.FindElementById("TextBox1").SendKeys("0");
-            driver.FindElementById("TextBox2").SendKeys("1");
-            driver.FindElementById("TextBox3").SendKeys("п");
-            driver.FindElementById("TextBox4").SendKeys("0");
-            driver.FindElementById("TextBox5").SendKeys("0");
-            driver.FindElementById("TextBox6").SendKeys("з");
+            driver.FindElement(By.Id("TextBox1")).SendKeys("0");
+            driver.FindElement(By.Id("TextBox2")).SendKeys("1");
+            driver.FindElement(By.Id("TextBox3")).SendKeys("п");
+            driver.FindElement(By.Id("TextBox4")).SendKeys("0");
+            driver.FindElement(By.Id("TextBox5")).SendKeys("0");
+            driver.FindElement(By.Id("TextBox6")).SendKeys("з");
 
             driver.FindElement(By.Id("Button1")).Click();
 
