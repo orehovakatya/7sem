@@ -6,6 +6,5 @@ dotnet: 2.2
 before_script:
   - dotnet restore
 script:
-  - dotnet build ./WebApplication1 -c Debug -f netcoreapp2.1
-  - dotnet build ./WebApplication1Tests -c Debug -f netcoreapp2.1
+  - msbuild /p:Configuration=Release WebApplication1.sln
   - dotnet test ./WebApplication1Tests -c Debug -f netcoreapp2.1
